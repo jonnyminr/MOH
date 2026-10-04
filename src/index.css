@@ -88,7 +88,7 @@ p, span, button, input, select, textarea {
   color: var(--accent-antique-gold);
 }
 
-/* Buttons & UI Elements */
+/* Buttons & UI Elements with Accessible Touch Targets */
 .btn-gold-primary {
   display: inline-flex;
   align-items: center;
@@ -101,12 +101,14 @@ p, span, button, input, select, textarea {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 1rem 2rem;
+  min-height: 48px;
   border: 1px solid var(--accent-antique-gold);
   border-radius: 0px;
   cursor: pointer;
   transition: var(--transition-fast);
   position: relative;
   overflow: hidden;
+  touch-action: manipulation;
 }
 
 .btn-gold-primary:hover {
@@ -128,10 +130,12 @@ p, span, button, input, select, textarea {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 1rem 2rem;
+  min-height: 48px;
   border: 1px solid var(--accent-antique-gold);
   border-radius: 0px;
   cursor: pointer;
   transition: var(--transition-fast);
+  touch-action: manipulation;
 }
 
 .btn-gold-outline:hover {
@@ -153,9 +157,11 @@ p, span, button, input, select, textarea {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   padding: 0.9rem 1.8rem;
+  min-height: 48px;
   border: 1px solid var(--text-warm-dark);
   cursor: pointer;
   transition: var(--transition-fast);
+  touch-action: manipulation;
 }
 
 .btn-dark-outline:hover {
@@ -252,10 +258,51 @@ p, span, button, input, select, textarea {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Media Queries for Responsive Design */
+/* Mobile & Tablet Responsive Media Queries */
+@media (max-width: 900px) {
+  .hero-bg-photo {
+    width: 100% !important;
+    opacity: 0.45 !important;
+  }
+  .hero-bg-gradient {
+    background: linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.95) 100%) !important;
+  }
+}
+
 @media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
   .hero-headline {
-    font-size: 2.4rem !important;
+    font-size: 2.5rem !important;
     line-height: 1.2 !important;
+  }
+  .hero-logo-img {
+    height: 95px !important;
+  }
+  .modal-overlay {
+    padding: 0.75rem;
+  }
+  .modal-content {
+    max-height: 95vh;
+    padding: 1.5rem !important;
+  }
+  .btn-gold-primary, .btn-gold-outline, .btn-dark-outline {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-headline {
+    font-size: 2.1rem !important;
+  }
+  .hero-logo-img {
+    height: 80px !important;
+  }
+  .floating-wa {
+    bottom: 1.25rem !important;
+    right: 1.25rem !important;
+    width: 50px !important;
+    height: 50px !important;
   }
 }

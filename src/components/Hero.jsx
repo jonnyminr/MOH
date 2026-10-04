@@ -16,6 +16,7 @@ export default function Hero({ onShopClick }) {
     >
       {/* Right Side Editorial Jewelry Photography */}
       <div 
+        className="hero-bg-photo"
         style={{
           position: 'absolute',
           top: 0,
@@ -29,8 +30,9 @@ export default function Hero({ onShopClick }) {
         }}
       />
 
-      {/* Pure Black Vignette Gradient: Smooth Blend from Pure Black on Left to Photo on Right */}
+      {/* Pure Black Vignette Gradient */}
       <div 
+        className="hero-bg-gradient"
         style={{
           position: 'absolute',
           inset: 0,
@@ -51,14 +53,15 @@ export default function Hero({ onShopClick }) {
       >
         <div style={{ maxWidth: '640px' }} className="fade-in">
           
-          {/* Prominent Bold Official Logo (Significantly Enlarged) */}
+          {/* Official Seamless Logo (Mobile Responsive Scaling) */}
           <div style={{ marginBottom: '1.75rem' }}>
             <img 
               src="/images/logo.jpg" 
               alt="MOH By Manali Official Logo" 
+              className="hero-logo-img"
               style={{
                 height: '145px',
-                width: 'auto',
+                maxWidth: '100%',
                 objectFit: 'contain',
                 display: 'block'
               }}
