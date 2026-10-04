@@ -258,37 +258,50 @@ p, span, button, input, select, textarea {
   animation: fadeIn 0.5s ease-out forwards;
 }
 
-/* Mobile & Tablet Responsive Media Queries */
-@media (max-width: 900px) {
+/* Mobile & Desktop Custom Media Queries */
+@media (min-width: 901px) {
   .hero-bg-photo {
-    width: 100% !important;
-    opacity: 0.45 !important;
+    width: 52% !important;
+    right: 0 !important;
+    background-position: center right !important;
+    opacity: 0.95 !important;
   }
   .hero-bg-gradient {
-    background: linear-gradient(180deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.95) 100%) !important;
+    background: linear-gradient(90deg, #000000 0%, #000000 48%, rgba(0,0,0,0.55) 66%, transparent 92%) !important;
   }
 }
 
-@media (max-width: 768px) {
-  html {
-    font-size: 15px;
+@media (max-width: 900px) {
+  .hero-section-root {
+    flex-direction: column-reverse !important;
+    align-items: stretch !important;
+    min-height: auto !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero-bg-photo, .hero-bg-gradient, .desktop-indicators {
+    display: none !important;
+  }
+  .mobile-bride-card-wrapper {
+    display: block !important;
+  }
+  .hero-main-container {
+    padding: 2.5rem 1.25rem 1.5rem 1.25rem !important;
+  }
+  .hero-text-box {
+    max-width: 100% !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hero-logo-img {
+    height: 95px !important;
+    margin: 0 auto 1.25rem auto !important;
   }
   .hero-headline {
     font-size: 2.5rem !important;
     line-height: 1.2 !important;
-  }
-  .hero-logo-img {
-    height: 95px !important;
-  }
-  .modal-overlay {
-    padding: 0.75rem;
-  }
-  .modal-content {
-    max-height: 95vh;
-    padding: 1.5rem !important;
-  }
-  .btn-gold-primary, .btn-gold-outline, .btn-dark-outline {
-    width: 100%;
+    margin-bottom: 1.25rem !important;
   }
 }
 

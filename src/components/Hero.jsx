@@ -13,8 +13,9 @@ export default function Hero({ onShopClick }) {
         overflow: 'hidden',
         borderBottom: '1px solid rgba(201, 164, 92, 0.2)'
       }}
+      className="hero-section-root"
     >
-      {/* Right Side Editorial Jewelry Photography */}
+      {/* Desktop Background Photo: Shifted to right so traditional bride is 100% visible */}
       <div 
         className="hero-bg-photo"
         style={{
@@ -22,25 +23,25 @@ export default function Hero({ onShopClick }) {
           top: 0,
           right: 0,
           bottom: 0,
-          width: '58%',
+          width: '54%',
           backgroundImage: `url('/images/hero.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center right',
-          opacity: 0.9
+          opacity: 0.95
         }}
       />
 
-      {/* Pure Black Vignette Gradient */}
+      {/* Desktop Gradient: Pure Black on Left, Smooth Transition to Visible Bride on Right */}
       <div 
         className="hero-bg-gradient"
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(90deg, #000000 0%, #000000 44%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.2) 80%, transparent 100%)'
+          background: 'linear-gradient(90deg, #000000 0%, #000000 48%, rgba(0,0,0,0.65) 66%, transparent 92%)'
         }}
       />
 
-      {/* Content Container */}
+      {/* Main Content Container */}
       <div 
         style={{
           maxWidth: '1280px',
@@ -50,10 +51,11 @@ export default function Hero({ onShopClick }) {
           zIndex: 10,
           width: '100%'
         }}
+        className="hero-main-container"
       >
-        <div style={{ maxWidth: '640px' }} className="fade-in">
+        <div style={{ maxWidth: '640px' }} className="fade-in hero-text-box">
           
-          {/* Official Seamless Logo (Mobile Responsive Scaling) */}
+          {/* Official Logo */}
           <div style={{ marginBottom: '1.75rem' }}>
             <img 
               src="/images/logo.jpg" 
@@ -131,8 +133,30 @@ export default function Hero({ onShopClick }) {
         </div>
       </div>
 
-      {/* Bottom Right Subtle Indicator Lines */}
+      {/* Mobile-Only Dedicated Traditional Girl Showcase Card */}
+      <div className="mobile-bride-card-wrapper" style={{ display: 'none' }}>
+        <div 
+          style={{
+            width: '100%',
+            height: '320px',
+            backgroundImage: `url('/images/hero.jpg')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center right',
+            position: 'relative',
+            borderBottom: '2px solid var(--accent-antique-gold)'
+          }}
+        >
+          <div style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, transparent 50%, #000000 100%)'
+          }} />
+        </div>
+      </div>
+
+      {/* Bottom Right Subtle Indicator Lines (Desktop Only) */}
       <div 
+        className="desktop-indicators"
         style={{
           position: 'absolute',
           bottom: '2.5rem',
